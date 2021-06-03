@@ -1,0 +1,27 @@
+[package]
+version = "0.1.0"
+name = "env-bug-test"
+repository = "https://github.com/seed-rs/seed-quickstart"
+authors = ["Colin Woodbury <colin@fosskers.ca>"]
+description = "App Description"
+categories = ["category"]
+license = "MIT"
+readme = "./README.md"
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+seed = "0.8.0"
+tame-oauth = "0.4.7"
+# parking_lot = { version = "0.11.1", features = ["wasm-bindgen"] } # Step 5
+# chrono = { version = "0.4", features = ["wasmbind"] } # Step 8
+
+[profile.release]
+lto = true
+opt-level = 'z'
+codegen-units = 1
+
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = ['-Os']
