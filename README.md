@@ -17,5 +17,6 @@ This repo is a minimal example for reproducing the compilation bug.
 > panicked at 'time not implemented on this platform', library/std/src/sys/wasm/../unsupported/time.rs:39:9
 
 8. Uncomment the `chrono` line in `Cargo.toml`. The `env` error is back.
+9. Uncomment the `ring` line in `Cargo.toml`. The `env` error persists.
 
 Changing optimization levels, etc., doesn't seem to have an effect.
